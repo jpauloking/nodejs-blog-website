@@ -1,0 +1,23 @@
+<header class="header">
+    <a href="/" class="header__logo">NodeJS Blog Website</a>
+    <nav class="header__nav">
+        <a href="/posts" class="<%= currentRoute === '/posts' ? 'active nav-link' : 'nav-link' %>">Home</a>
+        <a href="/#" class="<%= currentRoute === '/about' ? 'active nav-link' : 'nav-link' %>">About</a>
+        <a href="/#" class="<%= currentRoute === '/contact' ? 'active nav-link' : 'nav-link' %>">Contact</a>
+        <% if (locals.user) { %>
+            <a href="/dashboard" class="<%= currentRoute === '/dashboard' ? 'active nav-link' : 'nav-link' %>">Dashboard</a>
+            <a href="/auth/logout" class="<%= currentRoute === '/auth/logout' ? 'active nav-link' : 'nav-link' %>">Logout</a>
+            <% } else { %>
+                <a href="/auth/login" class="<%= currentRoute === '/auth/login' ? 'active nav-link' : 'nav-link' %>">Login</a>
+                <% } %>
+    </nav>
+    <div class="header__search">
+        <button class="header__search-button" aria-expanded="false">search
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+        </button>
+    </div>
+</header>

@@ -1,0 +1,8 @@
+<div class="">
+    <h1>Logout</h1>
+    <form action="/auth/logout" method="post">
+        <label for="username">Username</label>
+        <input type="email" readonly disabled name="username" id="username" value="<%= user.username %>" placeholder="Enter your email">
+        <input type="submit" value="Logout" class="button">
+    </form>
+</div>

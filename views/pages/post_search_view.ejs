@@ -1,0 +1,30 @@
+<div class="author">
+    <div class="author__heading">
+        <h1>Posts</h1>
+        <p class="author__body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi cumque ipsum quibusdam ex delectus molestias
+            recusandae natus autem. Modi, omnis.
+        </p>
+    </div>
+</div>
+<section class="articles">
+    <h2 class="articles__heading">Search results</h2>
+    <ul class="articles__list">
+        <% posts.forEach(post=> { %>
+            <li>
+                <a href="/posts/<%= post.id %>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="articles__date">
+                        <%= post.createdAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
+
+    </ul>
+    <% if (nextPageNumber !==null) { %>
+        <a href="/?pageNumber=<%= nextPageNumber %>" class="articles_pagination">&longleftarrow; Older posts</a>
+        <% } %>
+</section>

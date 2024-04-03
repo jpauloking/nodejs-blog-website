@@ -1,0 +1,12 @@
+<div class="">
+    <h1>Register</h1>
+    <form action="/auth/register" method="post">
+        <label for="username">Username</label>
+        <input type="email" name="username" id="username" value="<%= username %>" placeholder="Enter your email">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="<%= password %>" placeholder="Enter your password">
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" name="confirmPassword" id="confirm-password" value="<%= confirmPassword %>" placeholder="Enter your password again">
+        <input type="submit" value="Register" class="button">
+    </form>
+</div>

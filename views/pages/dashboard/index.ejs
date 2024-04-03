@@ -1,0 +1,41 @@
+<div class="author">
+    <div class="author__heading">
+        <h1>Dashboard</h1>
+    </div>
+    <% if (locals.user) { %>
+        <p class="author__body">
+            <%= user.username %>
+        </p>
+        <% } %>
+</div>
+<section class="articles">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="articles__heading">Your posts</h2>
+        <a href="/dashboard/create-post">Create post</a>
+    </div>
+    <ul class="articles__list">
+        <% posts.forEach(post=> { %>
+            <li>
+                <span>
+                    <%= post.title %>
+                </span>
+                <span class="articles__date">
+                    <%= post.createdAt.toDateString() %>
+                </span>
+                <div style="display: flex; justify-content: end; align-items: center; font-size: 1rem; border-top: 1px var(--accent) solid;">
+                    <a href="/dashboard/update-post/<%= post.id %>">
+                        Update
+                    </a>
+                    <a href="/dashboard/delete-post/<%= post.id %>">
+                        Delete
+                    </a>
+                </div>
+
+            </li>
+            <% }) %>
+
+    </ul>
+    <% if (nextPageNumber !==null) { %>
+        <a href="/?pageNumber=<%= nextPageNumber %>" class="articles_pagination">&longleftarrow; Older posts</a>
+        <% } %>
+</section>

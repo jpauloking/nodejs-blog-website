@@ -1,0 +1,14 @@
+<div class="">
+    <h1 class="">
+        <%= post.title %>
+    </h1>
+    <p class="">
+        created: <%= post.createdAt?.toDateString() %> | last updated: <%= post.updatedAt?.toDateString() %>
+    </p>
+    <p class="">
+        <%= post.excerpt %>
+    </p>
+    <p class="">
+        <%= post.body %>
+    </p>
+</div>

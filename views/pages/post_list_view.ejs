@@ -1,0 +1,27 @@
+<div class="author">
+    <div class="author__heading">
+        <h1>Hi, I am O.J. Paul</h1>
+        <p class="author__body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi cumque ipsum quibusdam ex delectus molestias
+            recusandae natus autem. Modi, omnis.
+        </p>
+    </div>
+</div>
+<img src="/images/hero-image.jpg" alt="" width="982" height="528" class="hero-image">
+<section class="articles">
+    <h2 class="articles__heading">Latest posts</h2>
+    <ul class="articles__list">
+        <% posts.forEach(post => { %>
+         <li>
+            <a href="/posts/<%= post.id %>">
+                <span><%= post.title %></span>
+                <span class="articles__date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+        
+    </ul>
+    <% if (nextPageNumber !== null) { %>
+        <a href="/?pageNumber=<%= nextPageNumber %>" class="articles_pagination">&longleftarrow; Older posts</a>
+        <% } %>
+</section>
